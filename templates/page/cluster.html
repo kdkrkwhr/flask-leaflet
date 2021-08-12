@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Marker Cluster 테스트</title>
+    <link rel="stylesheet" href="../static/css/map_common.css"/>
+	<link rel="stylesheet" href="../static/css/marker_cluster.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.min.css" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>
+	<script src="../static/js/leaflet.markercluster-src.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+	<div class="map-on-top-right-field">
+		<span class="map-ctn-btn" id="moveBtn">
+			<strong>랜덤 이동 버튼</strong>
+		</span>
+		<span class="map-ctn-btn" onclick="onGeoJsonData()">
+			<strong>GeoJSON 지역 생성</strong>
+		</span>
+	</div>
+	<div class="map-on-top-left-field">
+		<div class="map-txt">
+			<strong id="myLocationTxt"></strong>
+			<select id="distanceSelectBox" onchange="changeCircle()">
+				<option value="all">전 체</option>
+				<option value="1000">1 km</option>
+				<option value="5000">5 km</option>
+			</select>
+		</div>
+	</div>
+    <script src="../static/js/cluster.js"></script>
+</body>
+</html>

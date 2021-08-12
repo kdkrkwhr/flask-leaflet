@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>지도</title>
+	<link rel="shortcut icon" href="../static/image/favicon.ico"type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/map_common.css"/>
+	<link rel="stylesheet" href="../static/css/marker_cluster.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.0/MarkerCluster.Default.min.css" />
+
+	<script src="https://cdn-webgl.eegeo.com/eegeojs/early_access/latest/eegeo.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="../static/js/leaflet.markercluster-src.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+	<div class="map-on-top-left-field">
+		<div class="map-txt">
+			<strong id="myLocationTxt" onclick="myLocationZoom()"></strong>
+			<select id="distanceSelectBox" onchange="changeCircle()">
+				<option value="all">전 체</option>
+				<option value="1000">1 km</option>
+				<option value="5000">5 km</option>
+				<option value="10000">10 km</option>
+				<option value="20000">20 km</option>
+				<option value="50000">50 km</option>
+				<option value="100000">100 km</option>
+				<option value="300000">300 km</option>
+			</select>
+		</div>
+	</div>
+	<div class="map-on-top-right-field">
+		<span class="map-ctn-btn" onclick="onGeoJsonData()">
+			<strong>읍/면/동 지역 생성</strong>
+		</span>
+		<span class="map-ctn-btn" onclick="onCCTVData()">
+			<strong>CCTV 표출</strong>
+		</span>
+	</div>
+	<div class="map-on-bottom-left-field">
+		<div class="marker-content-view">
+			<div style="padding-right: 30px;" onclick="myLocationZoom()">
+				<strong>내 위치</strong>
+			</div>
+		</div>
+	</div>
+	<script src="../static/js/wind-js-leaflet.js"></script>
+    <script src="../static/js/cctvMap.js"></script>
+</body>
+</html>
